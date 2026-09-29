@@ -82,3 +82,36 @@ An initial inspection of the dataset also revealed:
 - The gene identifier column is currently labeled `Unnamed: 0`. This will later be renamed to a more descriptive name during data cleaning.
 
 These observations provide an initial understanding of the dataset's structure and will guide the data cleaning and preprocessing stages.
+
+### Initial Sample Metadata Investigation
+
+Before performing gene expression comparisons, individual GEO sample records were examined to understand the biological context associated with the expression measurements.
+
+| Sample | Tumor Group | Source | Tissue Description | Cancer Type |
+|--------|-------------|--------|--------------------|-------------|
+| M01 | Metastatic | Lung | Breast cancer metastasis to lung | HER2+ breast cancer |
+| P02 | Primary | Mammary | Primary tumor | HER2+ breast cancer |
+
+These initial samples demonstrate why sample metadata is important. Both samples are classified as HER2+ breast cancer, but M01 represents breast cancer that metastasized to the lung, while P02 represents a primary tumor from mammary tissue.
+
+The remaining sample metadata will be collected and structured programmatically before further analysis.
+
+### Biological Context
+
+To correctly interpret the gene expression data, it is important to understand the biological characteristics associated with each tumor sample.
+
+#### Primary vs. Metastatic Tumors
+
+A **primary tumor** is the original tumor that develops at the initial site of the cancer. In this dataset, primary samples represent tumors located in breast (mammary) tissue.
+
+A **metastatic tumor** occurs when cancer cells from the original tumor spread to another part of the body and establish a tumor at a distant site. Although the new tumor may be located in another organ, it is still considered breast cancer because it originated from breast cancer cells.
+
+For example, a breast cancer tumor that spreads to the lung is considered **metastatic breast cancer to the lung**, rather than lung cancer.
+
+#### HER2+ Breast Cancer
+
+**HER2 (Human Epidermal Growth Factor Receptor 2)** is a protein involved in regulating cell growth. HER2 is encoded by the `ERBB2` gene.
+
+Some breast cancers contain increased HER2 signaling, commonly associated with amplification and/or overexpression of `ERBB2`. These cancers are classified as **HER2-positive (HER2+) breast cancers**.
+
+HER2 status is important when interpreting this dataset because breast cancer subtype can influence gene expression. Therefore, differences observed between samples may be associated with factors such as tumor status, cancer subtype, or metastatic site rather than metastatic status alone.
