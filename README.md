@@ -52,3 +52,13 @@ The first inspection of the dataset shows that:
 - The first column contains Ensembl gene identifiers.
 - The remaining columns represent individual tumor samples.
 - Gene expression values are represented using TPM (Transcripts Per Million) normalized measurements.
+
+### Dataset Dimensions
+
+Initial exploration of the processed gene expression dataset identified:
+
+- **37,552 gene records** represented by Ensembl gene IDs
+- **20 breast cancer tumor samples**
+- **21 total columns**, consisting of one gene identifier column and 20 tumor sample columns
+
+The dataset therefore contains gene expression measurements for thousands of gene records across each of the 20 tumor samples. Further exploration will determine whether all gene identifiers are unique and examine the distribution of primary and metastatic samples.
