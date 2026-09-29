@@ -62,3 +62,23 @@ Initial exploration of the processed gene expression dataset identified:
 - **21 total columns**, consisting of one gene identifier column and 20 tumor sample columns
 
 The dataset therefore contains gene expression measurements for thousands of gene records across each of the 20 tumor samples. Further exploration will determine whether all gene identifiers are unique and examine the distribution of primary and metastatic samples.
+
+### Sample Composition
+
+The dataset contains gene expression measurements from **20 breast cancer tumor samples**. Based on the sample identifiers, the dataset includes:
+
+- **7 metastatic tumor samples:** `M01`, `M03`, `M05`, `M06`, `M07`, `M09`, `M10`
+- **13 primary tumor samples:** `P02`, `P03`, `P04`, `P05`, `P06`, `P07`, `P08`, `P10`, `P11`, `P12`, `P13`, `P14`, `P15`
+
+This means the two groups are **not equally represented** in the dataset, with more primary tumor samples than metastatic tumor samples. This imbalance will be considered later when performing statistical comparisons and evaluating machine learning models.
+
+### Initial Data Quality Observations
+
+An initial inspection of the dataset also revealed:
+
+- All **20 tumor sample columns** contain numerical (`float64`) gene expression values.
+- The gene identifier column contains text (`string`) values representing Ensembl gene IDs.
+- All columns contain **37,552 non-null values**, indicating that no missing values were detected during the initial inspection.
+- The gene identifier column is currently labeled `Unnamed: 0`. This will later be renamed to a more descriptive name during data cleaning.
+
+These observations provide an initial understanding of the dataset's structure and will guide the data cleaning and preprocessing stages.
